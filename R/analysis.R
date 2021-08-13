@@ -1,11 +1,17 @@
 # Importar datos
+#ODS file
+library(readODS)
+tabla_datos <- read_ods("data/test_data.ods")
+View(tabla_datos)
+
+#Xlsx file
 library(readxl)
-tabla_datos <- read_xlsx("datos/..")
+tabla_datos <- read_xlsx("data/test_data.xlsx")
 View(tabla_datos)
 
 ## Analisis de Correspondencias
 library(ca)
-acm <- ca(tabla_datos)
+acs <- ca(tabla_datos)
 summary(acs)
 plot(summary(acs)$scree, type="l") #Gráfico de codo (tal vez sea así)
 
