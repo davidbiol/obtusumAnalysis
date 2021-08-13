@@ -3,7 +3,7 @@ library(readxl)
 tabla_datos <- read_xlsx("datos/..")
 View(tabla_datos)
 
-## Análisis de Correspondencias
+## Analisis de Correspondencias
 library(ca)
 acm <- ca(tabla_datos)
 summary(acs)
@@ -51,3 +51,10 @@ autoplot(ACP, data = crabs, colour = ifelse(crabs$sex=="M"&crabs$sp=="O", "purpl
          loadings = TRUE, loadings.colour = 'red',
          loadings.label = TRUE, loadings.label.size = 3,
          loadings.label.colour='red')
+
+#------------------------------------------------------------------------------
+
+## Analisis de conglomerados
+acl <- kmeans(datos,centers=3)
+plot(datos, col = cl[["cluster"]])
+text(datos,row.names(datos),pos=3)
