@@ -1,4 +1,4 @@
-# Importar excel
+# Importar datos
 library(readxl)
-tabla_datos <- read_xlsx("Base_de_datos_vascular.xlsx")
+tabla_datos <- read_xlsx("datos/..")
 View(tabla_datos)
